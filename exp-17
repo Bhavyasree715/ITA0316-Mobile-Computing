@@ -1,0 +1,10 @@
+Aim
+To compute the free-space path loss (FSPL) and received power of a radio link for different distances and carrier frequencies using Python.
+Detailed Algorithm
+1.  Start. Import NumPy.
+2.  Define FSPL(dB) = 20 log10(d_km) + 20 log10(f_MHz) + 32.44.
+3.  Input the transmit power Pt (dBm), transmit antenna gain Gt (dB) and receive antenna gain Gr (dB).
+4.  Create a list of distances (0.1 km to 10 km) and select the frequencies 900 MHz and 1800 MHz.
+5.  For each frequency and distance compute L = FSPL and Pr(dBm) = Pt + Gt + Gr - L.
+6.  Convert Pr to watts: Pr(W) = 10^(Pr/10) / 1000.
+7.  Print the table and plot the graphs. Stop
