@@ -1,0 +1,10 @@
+Aim
+To compare Round Robin, Maximum C/I and Proportional Fair downlink schedulers in terms of per-user throughput, total throughput and Jain's fairness index.
+Detailed Algorithm
+1.  Start. Consider U = 6 users with mean SNR of 25, 20, 15, 10, 5 and 0 dB (near to far) and 2000 scheduling intervals (TTIs).
+2.  For every TTI and user generate a Rayleigh-fading channel gain (exponential power) and compute the achievable rate r = log2(1 + SNR x gain) in b/s/Hz.
+3.  Round Robin: serve user (t mod U).
+4.  Max C/I: serve the user with the highest instantaneous rate.
+5.  Proportional Fair: serve the user with the highest r / (average throughput); update the average with a forgetting factor of 0.99.
+6.  Accumulate the served rate of each user and divide by the number of TTIs to get the throughput.
+7.  Compute Jain's index J = (sum x)^2 / (U x sum x^2). Print the results and plot. Stop.
