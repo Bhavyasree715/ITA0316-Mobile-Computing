@@ -1,0 +1,11 @@
+Aim
+To evaluate the performance of a cellular network (throughput, delay and packet loss) as the number of users increases, using OMNeT++ (Simu5G) for simulation and Python for result analysis.
+Detailed Algorithm
+1.  Define the scenario: a multi-cell LTE/5G NR network (reuse the network from Experiment 22) with one server and a variable number of UEs.
+2.  Define the parameters: number of UEs (10, 20, 40), UE speed (3 m/s pedestrian), traffic (UDP downlink, 1000 B every 10 ms per UE), simulation time 60 s, 5 repetitions per setting.
+3.  Declare a parameter study in omnetpp.ini using iteration variables so that one run command executes all combinations.
+4.  Run all simulations in batch mode (Cmdenv) and store the scalar results (.sca files).
+5.  Write a Python script that reads the .sca files, groups the values by the number of UEs and averages over the repetitions and UEs.
+6.  Compute throughput per UE, mean end-to-end delay and packet loss ratio.
+7.  Tabulate and plot the results; interpret how the cell load affects the performance metrics.
+8.  Prepare the project report: objective, scenario, parameters, results, discussion and conclusion.
