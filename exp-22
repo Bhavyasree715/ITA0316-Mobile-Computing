@@ -1,0 +1,11 @@
+Aim
+To simulate mobile users moving across a multi-cell LTE/5G NR network in OMNeT++ (INET with Simu5G) and observe the handover process and its effect on traffic.
+Detailed Algorithm
+1.  Install OMNeT++ 6.x, INET and the matching Simu5G version; import them into the IDE and build.
+2.  Copy a multi-cell example network from Simu5G (for example the X2/handover or multi-cell NR example) as MultiCellHandover. The topology has three base stations (eNodeB/gNodeB) about 500 m apart, a core network (UPF/PGW), a server and several UEs.
+3.  In omnetpp.ini give each UE LinearMobility so that it travels across all three cells at constant speed.
+4.  Enable handover in the UEs and base stations and enable the X2 (or Xn) interface between neighbouring cells.
+5.  Install a downlink UDP stream from the server to every UE (UdpBasicApp at the server, UdpSink at the UE).
+6.  Run with the Qtenv graphical runtime; watch the UE move and the serving cell change. Enable module logging to see the handover messages.
+7.  Record the handover instants, serving cell versus time and the throughput of the UE; view them in the Analysis Tool.
+8.  Repeat with UE speeds of 5, 20 and 40 m/s and compare the handover count and packet loss.
