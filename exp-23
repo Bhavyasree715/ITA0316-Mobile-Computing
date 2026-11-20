@@ -1,0 +1,11 @@
+Aim
+To capture or open cellular network traces in Wireshark and analyse GSM, GTP, S1AP and NGAP signalling and user-plane messages.
+Detailed Algorithm
+1.  Install Wireshark (with tshark). Download public sample captures for GSM, GTP, S1AP and NGAP from the Wireshark Sample Captures wiki page (or use captures supplied by your lab).
+2.  Open a capture and look at Statistics > Protocol Hierarchy to identify the protocols present.
+3.  GSM: apply the filters gsm_a.dtap, gsm_a.bssmap, gsm_map or gsm_sms and list the call-control, mobility-management and SMS messages.
+4.  GTP: apply gtp (GTPv1) or gtpv2; identify Create PDP Context or Create Session Request/Response and the G-PDU packets that carry user data inside the tunnel (note the TEID).
+5.  S1AP (LTE): apply s1ap over SCTP; list the attach procedure messages (Initial UE Message, NAS messages, Initial Context Setup).
+6.  NGAP (5G): apply ngap over SCTP; list the registration and PDU session messages.
+7.  Export the message flow with Statistics > Flow Graph and take screenshots.
+8.  Repeat the analysis with tshark from the command line to extract fields.
