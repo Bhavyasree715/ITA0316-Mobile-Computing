@@ -1,0 +1,11 @@
+Aim
+To compare the proactive DSDV protocol and the reactive AODV protocol in a mobile ad hoc network in terms of packet delivery ratio, end-to-end delay and routing overhead.
+Detailed Algorithm
+1.  Create a network of N wireless hosts (N = 10, 20, 30) in a 600 m x 600 m area using INET ad hoc hosts with IEEE 802.11 in ad hoc mode.
+2.  Give each host RandomWaypointMobility with speed 1 to 10 m/s.
+3.  Create two configurations: AODV (reactive: route discovery with RREQ/RREP only when data must be sent) and DSDV (proactive: periodic table exchange with sequence numbers).
+4.  Install a UDP application from host[0] to the last host (512 B every 0.1 s).
+5.  Run each configuration for 200 s with at least five repetitions (different seeds).
+6.  Collect packets sent and received, end-to-end delay and the number of routing control packets.
+7.  Compute: PDR = packets received / packets sent; routing overhead = control packets / data packets delivered.
+8.  Repeat with different speeds and pause times and compare the protocols with the Analysis Tool.
