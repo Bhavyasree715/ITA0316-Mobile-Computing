@@ -1,0 +1,13 @@
+Aim
+To simulate Mobile IP in OMNeT++ (INET) and observe the signalling used when a mobile node moves from its home network to a foreign network.
+Detailed Algorithm
+1.  Open the INET Mobile IPv6 example (the mipv6 example folder) and copy it as MobileIPDemo. The network contains a Mobile Node (MN), a Home Agent (HA), a Correspondent Node (CN), routers and access points for the home and foreign networks.
+2.  Configure the MN to move on a path from the home access point to the foreign access point (waypoint or linear mobility).
+3.  Run a UDP or ping stream from the CN to the MN's home address.
+4.  While at home the MN receives packets directly. When the MN attaches to the foreign network it receives a Router Advertisement (movement detection).
+5.  The MN forms a care-of address (CoA) from the foreign prefix.
+6.  The MN sends a Binding Update (BU) to the HA; the HA stores the home-address-to-CoA binding and replies with a Binding Acknowledgement (BA).
+7.  Packets from the CN to the home address are intercepted by the HA and tunnelled (IP-in-IP) to the CoA.
+8.  Optional route optimisation: the Return Routability messages (HoTI, CoTI, HoT, CoT) are exchanged and the MN sends a BU to the CN so that later packets go directly.
+9.  Plot the packets received at the MN against time and note the gap during handover; view the sequence chart.
+Code / Configuration
