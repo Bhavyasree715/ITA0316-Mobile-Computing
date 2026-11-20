@@ -1,0 +1,10 @@
+Aim
+To simulate a mobile moving between two base stations and study how the hysteresis margin affects the number of handoffs and ping-pong events.
+Detailed Algorithm
+1.  Start. Place BS1 at x = 0 and BS2 at x = 2000 m; the mobile moves from 10 m to 2000 m in 5 m steps.
+2.  Model received signal strength RSS = P0 - 10 n log10(d) + shadowing, with P0 = -30 dBm, n = 3.5 and Gaussian shadowing (sigma = 4 dB, fixed seed).
+3.  Compute the RSS from both base stations at every position.
+4.  Initialise serving = BS1 and handoff count = 0.
+5.  At each step: if serving = BS1 and RSS2 > RSS1 + H, hand off to BS2; if serving = BS2 and RSS1 > RSS2 + H, hand off to BS1; increment the counter.
+6.  Repeat for hysteresis H = 0, 2, 4, 6, 8, 10 dB.
+7.  Count ping-pongs as handoffs beyond the one necessary handoff. Print the results and plot. Stop.
