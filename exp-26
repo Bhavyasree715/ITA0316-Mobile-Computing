@@ -1,0 +1,10 @@
+Aim
+To record the packets exchanged in an OMNeT++/INET simulation into a PCAP file and analyse them in Wireshark.
+Detailed Algorithm
+1.  Create a simple INET network: client, router and server connected by 100 Mbps Ethernet links.
+2.  Configure the Ipv4NetworkConfigurator to assign IP addresses automatically.
+3.  Install a PingApp and a UdpBasicApp at the client and a UdpSink at the server.
+4.  Enable a PcapRecorder in the router (or in the server) and set the output file.
+5.  Run the simulation to completion; the file results/capture.pcap is created.
+6.  Open the file in Wireshark; use the filters icmp, udp.port == 1000 and arp to separate the flows.
+7.  Check the packet list, the timing (Time column) and the protocol layers in the packet details pane; use Statistics > Conversations and I/O Graphs.
